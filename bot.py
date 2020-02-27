@@ -235,3 +235,4 @@ async def pay(ctx, user1: discord.User, user2: discord.User, arg):
 		await ctx.send('Игрок ' + user1.name + ' передал игроку ' + user2.name + ' ' + str(arg) + ' монет, теперь у игрока ' + user2.name + ' ' + str(mo2) + ' монет.')
 
 token = os.environ.get('BOT_TOKEN')
+bot.run(str(token))
