@@ -23,7 +23,7 @@ async def rptry(ctx):
 	
 @bot.command(pass_context=True)   
 async def irnd(ctx, n1, n2):
-    await ctx.send('Выпало число: ' + str(random.randint(n1, n2)))
+    await ctx.send('Выпало число: ' + str(random.randint(int(n1), int(n2))))
 
 @bot.command(pass_context=True)   
 async def rprnd(ctx, user: discord.User):
