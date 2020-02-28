@@ -218,6 +218,22 @@ async def stat(ctx, user: discord.User):
 	await ctx.send('У игрока ' + user.name + ': \n- ' + str(mo) + ' монет\n- ' + str(hp) + ' хп\n- ' + str(lvl) + ' уровень\n- ' + str(exp) + ' опыта')
 
 @bot.command(pass_context=True)   
+async def areset(ctx, user: discord.User):
+	mof = open('rpb/players/' + user.name + '/money.txt')
+	mo.write('10')
+	mof.close()
+	hpf = open('rpb/players/' + user.name + '/hp.txt')
+	hp.write('100')
+	hpf.close()
+	expf = open('rpb/players/' + user.name + '/exp.txt')
+	exp.write('0')
+	expf.close()
+	lvlf = open('rpb/players/' + user.name + '/lvl.txt')
+	lvl.write('0')
+	lvlf.close()
+	await ctx.send('Аккаунт игрока ' + user.name + ' был полностью сброшен.')
+	
+@bot.command(pass_context=True)   
 async def pay(ctx, user1: discord.User, user2: discord.User, arg):
 	mo1f = open('rpb/players/' + user1.name + '/money.txt')
 	mo1 = int(mo1f.read())
