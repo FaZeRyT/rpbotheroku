@@ -20,6 +20,10 @@ async def rptry(ctx):
     	await ctx.send('Удача на вашей стороне ;) ')
     else:
     	await ctx.send('Вы потерпели неудачу :с ')
+	
+@bot.command(pass_context=True)   
+async def irnd(ctx, n1, n2):
+    await ctx.send('Выпало число: ' + str(random.randint(n1, n2)))
 
 @bot.command(pass_context=True)   
 async def rprnd(ctx, user: discord.User):
