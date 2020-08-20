@@ -21,4 +21,5 @@ async def ban(ctx, user: discord.User):
     await ctx.send('Пользователь ' + user.name + ' забанен пользователем ' + format(ctx.message.author))
     print(user.name + ' забанен!')
 
-bot.run("NjU3OTg3NzA3NTQwMzQwNzkx.Xf5NDQ.PflQ0TZ4iKUzisVebHQljb6asS8")
+token = os.environ.get('BOT_TOKEN')
+bot.run(str(token))
