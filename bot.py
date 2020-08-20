@@ -1,4 +1,6 @@
 import discord
+import random
+import os
 
 #@bot.command(pass_context=True) 
 #async def test(ctx): 
