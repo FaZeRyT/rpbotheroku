@@ -2,6 +2,8 @@ import discord
 import random
 import os
 
+from discord.ext import commands
+
 #@bot.command(pass_context=True) 
 #async def test(ctx): 
 #    await ctx.send('Дима лох')
