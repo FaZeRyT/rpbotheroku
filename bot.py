@@ -13,7 +13,7 @@ async def msg(ctx, *, arg):
     await ctx.send(arg) 
 
 @bot.command(pass_context=True)   
-async def help(ctx):
+async def h(ctx):
     await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
 
 @bot.command(pass_context=True)   
