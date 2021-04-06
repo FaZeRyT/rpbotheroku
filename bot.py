@@ -16,6 +16,10 @@ async def h(ctx):
     await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
 
 @bot.command(pass_context=True)   
+async def clear(ctx, amount = 1):
+	await ctx.channel.purge( limit = amount )
+
+@bot.command(pass_context=True)   
 @commands.has_permissions( administrator = True )
 async def safe(ctx, user: discord.User):
     #await ctx.send(str(user.id) + '\n' + str(user))
