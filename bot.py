@@ -18,12 +18,12 @@ async def h(ctx):
 
 @bot.command(pass_context=True)   
 async def safe(ctx, user: discord.User):
-    await user.name.add_roles(828868950569779210)
+    await user_id.add_roles(828868950569779210)
     await ctx.send('Пользователь ' + user.name + ' помечен как \"Safe\"')
 
 @bot.command(pass_context=True)   
 async def unsafe(ctx, user: discord.User):
-    await user.name.add_roles(828869017569591307)
+    await user_id.add_roles(828869017569591307)
     await ctx.send('Пользователь ' + user.name + ' помечен как \"Unsafe\"')
 
 bot.run(str(os.environ.get('BOT_TOKEN')))
