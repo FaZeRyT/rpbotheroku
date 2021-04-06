@@ -1,4 +1,4 @@
-import discord
+import discord.py
 import random2
 import os
 
