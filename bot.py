@@ -1,10 +1,9 @@
 import discord
+import discord.role
 import random2
 import os
 
 from discord.ext import commands
-
-
 
 bot = commands.Bot(command_prefix='.')
 
@@ -17,13 +16,30 @@ async def h(ctx):
     await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
 
 @bot.command(pass_context=True)   
+@commands.has_permissions( administrator = True )
 async def safe(ctx, user: discord.User):
-    await user_id.add_roles(828868950569779210)
-    await ctx.send('Пользователь ' + user.name + ' помечен как \"Safe\"')
+    #await ctx.send(str(user.id) + '\n' + str(user))
+    rolesafe = discord.utils.get( user.guild.roles, id = 828868950569779210 )
+    roleunsafe = discord.utils.get( user.guild.roles, id = 828869017569591307 )
+    await user.add_roles( rolesafe )
+    await user.remove_roles( roleunsafe )
+    await ctx.send('Роли ' + user.mention + ' обновлены.')
 
-@bot.command(pass_context=True)   
+@bot.command(pass_context=True)
+@commands.has_permissions( administrator = True )   
 async def unsafe(ctx, user: discord.User):
-    await user_id.add_roles(828869017569591307)
-    await ctx.send('Пользователь ' + user.name + ' помечен как \"Unsafe\"')
+    rolesafe = discord.utils.get( user.guild.roles, id = 828868950569779210 )
+    roleunsafe = discord.utils.get( user.guild.roles, id = 828869017569591307 )
+    await user.add_roles( roleunsafe )
+    await user.remove_roles( rolesafe )
+    await ctx.send('Роли ' + user.mention + ' обновлены.')
+
+@bot.event
+async def on_member_join( member ):
+	channel = client.get_channel( 828868266498981933 )
+
+	role = discord.utils.get( member.guild.roles, id = 828988730312097834 )
+
+	await member.add_roles( role )
 
 bot.run(str(os.environ.get('BOT_TOKEN')))
