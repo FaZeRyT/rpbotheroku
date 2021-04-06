@@ -16,7 +16,7 @@ async def h(ctx):
     await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
 
 @bot.command(pass_context=True)   
-async def clear(ctx, amount = 1):
+async def clear(ctx, amount = 2):
 	await ctx.channel.purge( limit = amount )
 
 @bot.command(pass_context=True)   
