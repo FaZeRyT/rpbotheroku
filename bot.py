@@ -43,7 +43,7 @@ async def unsafe(ctx, user: discord.User):
 async def on_member_join( member ):
 	channel = bot.get_channel( 828868266498981933 )
 
-	role = discord.utils.get( member.guild.roles, id = 828988730312097834 )
+	role = discord.utils.get( user.guild.roles, id = 828988730312097834 )
 
 	await member.add_roles( role )
 
