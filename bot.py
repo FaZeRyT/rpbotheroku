@@ -12,9 +12,10 @@ async def msg(ctx, *, arg):
     await ctx.send(arg) 
 
 @bot.command(pass_context=True)   
-async def h(ctx):
+async def test(ctx):
     await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
 
+@commands.has_permissions( administrator = True ) 
 @bot.command(pass_context=True)   
 async def clear(ctx, amount = 2):
 	await ctx.channel.purge( limit = amount )
@@ -40,7 +41,7 @@ async def unsafe(ctx, user: discord.User):
 
 @bot.event
 async def on_member_join( member ):
-	channel = client.get_channel( 828868266498981933 )
+	channel = bot.get_channel( 828868266498981933 )
 
 	role = discord.utils.get( member.guild.roles, id = 828988730312097834 )
 
