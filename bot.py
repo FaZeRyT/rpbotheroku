@@ -15,6 +15,10 @@ async def msg(ctx, *, arg):
 async def test(ctx):
     await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
 
+@bot.command(pass_context=True)   
+async def info(ctx):
+    await ctx.send('')
+
 @commands.has_permissions( administrator = True ) 
 @bot.command(pass_context=True)   
 async def clear(ctx, amount = 2):
