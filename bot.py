@@ -1,6 +1,6 @@
 import discord
 import random2
-import os
+import os1
 
 from discord.ext import commands
 
