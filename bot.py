@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix='.')
 
 @bot.command(pass_context=True)   
 async def info(ctx):
-    await ctx.send('```ClayBOT v2.7' + '\n' + 'by FaZeR```')
+    await ctx.send('```ClayBOT v2.8' + '\n' + 'by FaZeR```')
 
 @commands.has_permissions( administrator = True ) 
 @bot.command(pass_context=True)   
@@ -42,6 +42,7 @@ async def unsafe(ctx, user: discord.User):
 
 @bot.event
 async def on_user_join( user ):
+	channel = bot.get_channel ( 829070585404719124 )
 
 	role = discord.utils.get( user.guild.roles, id = 828988730312097834 )
 
