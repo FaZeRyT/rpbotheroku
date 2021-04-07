@@ -7,21 +7,18 @@ from discord.ext import commands
 
 bot = commands.Bot(command_prefix='.')
 
-@bot.command(pass_context=True)
-async def msg(ctx, *, arg):
-    await ctx.send(arg) 
-
-@bot.command(pass_context=True)   
-async def test(ctx):
-    await ctx.send('```bash' + '\n' + '#Серый цвет' + '\n' + '"Бирюзовый"' + '\n' + '$Yellow```')
+#@bot.command(pass_context=True)
+#async def msg(ctx, *, arg):
+#    await ctx.send(arg) 
 
 @bot.command(pass_context=True)   
 async def info(ctx):
-    await ctx.send('')
+    await ctx.send('```ClayBOT v2.7' + '\n' + 'by FaZeR```')
 
 @commands.has_permissions( administrator = True ) 
 @bot.command(pass_context=True)   
-async def clear(ctx, amount = 2):
+async def clear(ctx, amount = 1):
+	amount += 1
 	await ctx.channel.purge( limit = amount )
 
 @bot.command(pass_context=True)   
