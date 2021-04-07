@@ -11,15 +11,20 @@ bot = commands.Bot(command_prefix='!')
 #async def msg(ctx, *, arg):
 #    await ctx.send(arg) 
 
+#info
+
 @bot.command(pass_context=True)   
 async def info(ctx):
     await ctx.send('```ClayBOT v2.9' + '\n' + 'by FaZeR```')
 
+#clear
 @commands.has_permissions( administrator = True ) 
 @bot.command(pass_context=True)   
 async def clear(ctx, amount = 1):
 	amount += 1
 	await ctx.channel.purge( limit = amount )
+
+#safe	
 
 @bot.command(pass_context=True)   
 @commands.has_permissions( administrator = True )
@@ -30,6 +35,8 @@ async def safe(ctx, user: discord.User):
     await user.add_roles( rolesafe )
     await user.remove_roles( roleunsafe )
     await ctx.send('Роли ' + user.mention + ' обновлены.')
+
+#unsafe
 
 @bot.command(pass_context=True)
 @commands.has_permissions( administrator = True )   
