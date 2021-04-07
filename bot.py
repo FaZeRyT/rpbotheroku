@@ -5,7 +5,7 @@ import os
 
 from discord.ext import commands
 
-bot = commands.Bot(command_prefix='.')
+bot = commands.Bot(command_prefix='!')
 
 #@bot.command(pass_context=True)
 #async def msg(ctx, *, arg):
@@ -13,7 +13,7 @@ bot = commands.Bot(command_prefix='.')
 
 @bot.command(pass_context=True)   
 async def info(ctx):
-    await ctx.send('```ClayBOT v2.8' + '\n' + 'by FaZeR```')
+    await ctx.send('```ClayBOT v2.9' + '\n' + 'by FaZeR```')
 
 @commands.has_permissions( administrator = True ) 
 @bot.command(pass_context=True)   
@@ -40,12 +40,12 @@ async def unsafe(ctx, user: discord.User):
     await user.remove_roles( rolesafe )
     await ctx.send('Роли ' + user.mention + ' обновлены.')
 
-@bot.event
-async def on_user_join( user ):
-	channel = bot.get_channel ( 829070585404719124 )
-
-	role = discord.utils.get( user.guild.roles, id = 828988730312097834 )
-
-	await user.add_roles( role )
+#@bot.event
+#async def on_user_join( user ):
+#	channel = bot.get_channel ( 829070585404719124 )
+#
+#	role = discord.utils.get( user.guild.roles, id = 828988730312097834 )
+#
+#	await user.add_roles( role )
 
 bot.run(str(os.environ.get('BOT_TOKEN')))
